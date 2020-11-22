@@ -24,6 +24,16 @@ jobs:
       - name: Run tests
         run: python app/tests.py
 
+  lint:
+    name: Run linter for dockerfile(Hadolint)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Hadolint
+        uses: hadolint/hadolint
+      - name: Run Hadolint
+        run: docker run --rm -i hadolint/hadolint < Dockerfile
+
   build-push:
     name: Build and push
     runs-on: ubuntu-latest
