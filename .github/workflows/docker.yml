@@ -28,6 +28,7 @@ jobs:
     name: Run linter for dockerfile(Hadolint)
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Hadolint linting
         uses: brpaz/hadolint-action@master
 
