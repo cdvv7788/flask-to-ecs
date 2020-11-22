@@ -1,8 +1,11 @@
 ---
 name: Build a docker image and push it to AWS ECR
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - master
+  #release:
+  #  types: [published]
 
 jobs:
   test:
